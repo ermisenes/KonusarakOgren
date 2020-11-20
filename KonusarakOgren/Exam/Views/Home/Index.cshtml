@@ -1,0 +1,114 @@
+﻿@using Exam.Models
+@model ArticleModel
+@{
+    ViewData["Title"] = "Home Page";
+
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+</div>
+<table class="table table-bordered">
+    <tr>
+        <td>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+            <table class="table table-bordered">
+                <tr>
+                    <td> Title  @Html.TextBoxFor(m => m.GetExamModel.Title)</td>
+                </tr>
+                <tr>
+                    <td>
+                        Desc  @Html.TextBoxFor(m => m.GetExamModel.Desc)
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tarih  @Html.TextBoxFor(m => m.GetExamModel.ExamDate , "{0:yyyy-MM-dd}", new { type = "date" })
+                        @Html.HiddenFor(m => m.Id)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="1" cellpadding="6">
+                            @for (int i = 0; i < 4; i++)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.HiddenFor(m => m.GetExamModel.QuestionsList[i].Id)
+
+                                        Questin  @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].QuestionDesc)
+                                        <br />
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].AnswerA)
+                                                </td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].AnswerB)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].AnswerC)
+                                                </td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].AnswerD)
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Answer  @Html.TextBoxFor(m => m.GetExamModel.QuestionsList[i].CorrectAnswer)
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td colspan="4">
+                                    <input type="submit" value="Submit" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            }
+        </td>
+        <td>
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+                @foreach (var article in Model.Articles)
+                {
+                    <tr>
+                        <td>@article.Id</td>
+                        <td>@article.ArticleTitle</td>
+                        <td>@article.ArticleDesc</td>
+                        <td>@article.ArticleDate?.ToString("yyyy-MM-dd")</td>
+                        <td><a href="/Home/index/@article.Id">Güncelle</a> </td>
+                        <td>
+                            <form asp-action="Delete" method="post" asp-route-id="@article.Id">
+                                <button>Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>

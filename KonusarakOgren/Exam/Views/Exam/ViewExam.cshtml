@@ -1,0 +1,109 @@
+﻿@using Exam.Models
+@model ExamModel
+@{
+    ViewData["Title"] = "ViewExam";
+    var articleId = ViewContext.RouteData.Values["id"];
+}
+@Html.Hidden("articleId", articleId);
+<table class="table table-bordered">
+    <tr>
+        <td>
+            <form  id="CreateAnswer">
+
+                <table class="table table-bordered">
+                    <tr>
+                        <td> Title  @Model.Title</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Desc  @Model.Desc
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="container">
+                                <table style="width:100%">
+                                    <tr>
+                                        @{
+                                            var index = 1;
+                                            var lbId=""; 
+                                        }
+
+                                        @for (int i = 0; i < 4; i++)
+                                        {
+                                            lbId = index + "_td";
+                                            if ((i % 2) == 0)
+                                            {
+                                                @Html.Raw("</tr>");
+                                                @Html.Raw("<tr>");
+
+
+                                            }
+
+                                        <td>
+                                            <table class="table table-borderless">
+                                                <tr>
+                                                    <td>
+
+
+                                                        Questin @index @Model.QuestionsList[i].QuestionDesc
+                                                        <br />
+                                                         
+                                                        <table id="question" style=" border: 1px solid blue;">
+                                                            <tr>
+                                                                <td style="width:100%">
+                                                                    A)  <input type="radio" id="radio_@index" name="radio_@index" value="A" />
+                                                                    <label id="@lbId-1"> @Model.QuestionsList[i].AnswerA</label>
+                                                                </td>
+                                                            <tr>
+                                                                <td style="width:100%">
+                                                                    B)   <input type="radio" id="radio_@index" name="radio_@index" value="B" />
+                                                                    <label id="@lbId-2"> @Model.QuestionsList[i].AnswerB</label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:100%">
+                                                                    C)  <input type="radio" id="radio_@index" name="radio_@index" value="C" />
+                                                                    <label id="@lbId-3"> @Model.QuestionsList[i].AnswerC</label>
+                                                                </td>
+                                                            <tr>
+                                                                <td style="width:100%">
+                                                                    D)   <input type="radio" id="radio_@index" name="radio_@index" value="D" />
+                                                                    <label id="@lbId-4"> @Model.QuestionsList[i].AnswerD</label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                          
+                                        </td>
+                                            index++;
+                                        }
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            
+                            <button type="button" id="SendBtn" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </td>
+
+    </tr>
+</table>
+@section scripts {
+
+    <script src="~/js/site.js"></script>
+
+}

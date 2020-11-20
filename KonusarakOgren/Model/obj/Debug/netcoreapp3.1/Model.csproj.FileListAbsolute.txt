@@ -1,0 +1,16 @@
+C:\Users\ismail.ermis\source\repos\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+C:\Users\ismail.ermis\source\repos\Model\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\ismail.ermis\source\repos\Model\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\ismail.ermis\source\repos\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+C:\Users\ismail.ermis\source\repos\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+C:\Users\ismail.ermis\source\repos\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\ismail.ermis\source\repos\Model\obj\Debug\netcoreapp3.1\Model.dll
+C:\Users\ismail.ermis\source\repos\Model\obj\Debug\netcoreapp3.1\Model.pdb
+C:\Users\enes-\Desktop\KonusarakOgren\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+C:\Users\enes-\Desktop\KonusarakOgren\Model\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\enes-\Desktop\KonusarakOgren\Model\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\enes-\Desktop\KonusarakOgren\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
+C:\Users\enes-\Desktop\KonusarakOgren\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+C:\Users\enes-\Desktop\KonusarakOgren\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+C:\Users\enes-\Desktop\KonusarakOgren\Model\obj\Debug\netcoreapp3.1\Model.dll
+C:\Users\enes-\Desktop\KonusarakOgren\Model\obj\Debug\netcoreapp3.1\Model.pdb
